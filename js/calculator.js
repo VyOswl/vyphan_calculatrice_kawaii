@@ -121,11 +121,11 @@ document.getElementById("result").addEventListener("click", () => {
             operands.splice(opIndex, 2, operands[opIndex] / operands[opIndex + 1]);
             operators.splice(opIndex, 1);
         };
-        while (operators.includes('%')) {
+        /*while (operators.includes('%')) {
             let opIndex = operators.indexOf('%');
             operands.splice(opIndex, 2, operands[opIndex] % operands[opIndex + 1]);
             operators.splice(opIndex, 1);
-        };
+        };*/
         let result = +operands[0];
         for (let i = 0; i < operators.length; i++) {
             operators[i] === '+' ? (result += +operands[i + 1]) : (result -= +operands[i + 1])
