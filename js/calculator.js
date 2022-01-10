@@ -1,4 +1,3 @@
-console.log(1 - -3);
 const input = document.getElementById("input");
 const display = document.getElementById("display");
 const answer = document.getElementById("answer");
@@ -105,16 +104,6 @@ document.getElementById("result").addEventListener("click", () => {
         console.log(operands);
 
 
-        //display.innerText = `${display.innerText} ${input.innerText}`;
-        //const str = display.innerText.replace(/\s/g, '');
-        /* const operators = str.replace(/[\d.]/g, '').split('');
-        const operands = str.replace(/[+/%*-]/g, ' ')
-            .replace(/\,/g, '.')
-            .split(' ')
-            .map(parseFloat)
-            .filter(it => it); */
-
-
         while (operators.includes('*')) {
             let opIndex = operators.indexOf('*');
             operands.splice(opIndex, 2, operands[opIndex] * operands[opIndex + 1]);
@@ -125,11 +114,6 @@ document.getElementById("result").addEventListener("click", () => {
             operands.splice(opIndex, 2, operands[opIndex] / operands[opIndex + 1]);
             operators.splice(opIndex, 1);
         };
-        /*while (operators.includes('%')) {
-            let opIndex = operators.indexOf('%');
-            operands.splice(opIndex, 2, operands[opIndex] % operands[opIndex + 1]);
-            operators.splice(opIndex, 1);
-        };*/
         let result = +operands[0];
         for (let i = 0; i < operators.length; i++) {
             operators[i] === '+' ? (result += +operands[i + 1]) : (result -= +operands[i + 1])
@@ -137,5 +121,4 @@ document.getElementById("result").addEventListener("click", () => {
 
         answer.innerText = "=  " + (+(Math.round(result + "e+9") + "e-9"));
     }
-    console.log(1 - -3);
 });
